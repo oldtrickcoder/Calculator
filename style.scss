@@ -16,6 +16,7 @@ body{
     height: 100vh;
     width: 100vw;
     display: flex;
+    display:  -webkit-box;
     justify-items: center;
     justify-content: center;
 }
@@ -100,7 +101,7 @@ main{
         border-radius: 30px;
         height: 70vh;
         margin-top: 33%;
-        width: 95%;
+        width: 70%;
     
         input, button{
             outline: none;
@@ -116,7 +117,7 @@ main{
     
         input{
             @include shadow-inset();
-            width: 295px;
+            width: 250px;
             height: 60px;
             padding: 16px 32px;
             text-align: right;
@@ -166,8 +167,8 @@ main{
         @include shadow();
         padding: 2rem;
         border-radius: 30px;
-        height: 70vh;
-        margin-top: 25%;
+        height: 85vh;
+        margin-top: 15%;
         width: 95%;
     
         input, button{
@@ -227,4 +228,150 @@ main{
 }
 
 
+// Iphone 5/se
+@media only screen and(max-width:322px){
+    main{
+        @include shadow();
+        padding: 2rem;
+        border-radius: 30px;
+        height: 80vh;
+        margin-top: 25%;
+        width: 95%;
+    
+        input, button{
+            outline: none;
+        }
+    
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+    
+        input{
+            @include shadow-inset();
+            width: 250px;
+            height: 60px;
+            padding: 16px 32px;
+            text-align: right;
+            border: none;
+            border-radius: 30px;
+            text-shadow: -1 -1 2px #fff,2px 2px 2px,rgba($color: #000000, $alpha: 0.4);
+        }
+    
+        .keys{
+            display: grid;
+            grid-template-columns: repeat(4, 0.5fr);
+            grid-gap: 0.8rem;
+            margin-top: 10px;
+        }
+    
+        button{
+            @include shadow();
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: #e9e9e9;
+            &:hover, &:active{
+                background-color: #ccc;
+            }
+            &:active{
+                @include shadow-inset();
+            }
+        }
+    
+        .op__key,
+        .eq__key{
+            color:#ff652f;
+        }
+    
+    
+    }
 
+
+}
+
+
+// Ipad pro
+
+@media only screen and(min-width:1020px){
+    main{
+        @include shadow();
+        padding: 1rem;
+        border-radius: 30px;
+        height: 80vh;
+        margin-top: 15%;
+        width: 95%;
+    
+        input, button{
+            outline: none;
+        }
+    
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+        }
+        input[type=number]{
+            -moz-appearance: textfield;
+        }
+    
+        input{
+            @include shadow-inset();
+         
+            width: 888px;
+            height: 100px;
+            padding: 16px 32px;
+            text-align: right;
+            border: none;
+            border-radius: 30px;
+            text-shadow: -1 -1 2px #fff,2px 2px 2px,rgba($color: #000000, $alpha: 0.4);
+        }
+    
+        .keys{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 0.8rem;
+            margin-top: 30px;
+        }
+    
+        button{
+            @include shadow();
+            width: 125px;
+            height: 125px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: #e9e9e9;
+            &:hover, &:active{
+                background-color: #ccc;
+            }
+            &:active{
+                @include shadow-inset();
+            }
+        }
+    
+        .op__key,
+        .eq__key{
+            color:#ff652f;
+        }
+    
+    
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: #e9e9e9;
+        font-family: "Fira Mono",monospace,sans-serif;
+        font-size: 50px;
+    }
+
+
+
+
+}
